@@ -18,7 +18,12 @@ def add_value(transaction_amount):
     :param transaction_amount: the new value
     """
     BLOCK_CHAIN.append([get_last_block_chain_value(), transaction_amount])
-    print(BLOCK_CHAIN)
 
 
-add_value(5.3)
+NUM_OF_TX = int(input('How many transaction do you want: '))
+
+for i in range(NUM_OF_TX):
+    tx_amount = input(f'Type the amount for transaction No {i + 1} please: ')
+    add_value(float(tx_amount))
+
+print(BLOCK_CHAIN)
